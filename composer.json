@@ -29,6 +29,7 @@
     },
     "require": {
         "php": ">=7.4",
+        "ractstudio/wp-frame-studio": "^1.0",
         "twig/twig": "^3.3",
         "symfony/http-client": "^5.4"
     }
