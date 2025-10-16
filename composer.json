@@ -1,6 +1,6 @@
 {
-    "name": "wp-plugin-frame/wp-plugin-frame",
-    "description": "A modern Laravel-like WordPress theme framework for developers who value clean structure, modular design, and next-gen workflows — built on WP Frame Studio.",
+    "name": "mhrubel/wp-plugin-frame",
+    "description": "Plugin Frame: A modern WordPress plugin development framework.",
     "authors": [
         {
             "name": "mhrubel",
@@ -30,6 +30,7 @@
     "require": {
         "php": ">=7.4",
         "twig/twig": "^3.3",
-        "symfony/http-client": "^5.4"
+        "symfony/http-client": "^5.4",
+        "ractstudio/wp-frame-studio": "^1.0"
     }
 }
