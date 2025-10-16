@@ -1,2 +1,2 @@
 # wp-plugin-frame
-wp-plugin-frame is a WordPress plugin developer framework fully depends on wp-frame-studio composer package.
+A composer package to develop, robust WordPress Plugin and Theme for human.
