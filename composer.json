@@ -11,7 +11,7 @@
         "phpcs": "phpcs --standard=WordPress --extensions=php .",
         "phpcbf": "phpcbf --standard=WordPress --extensions=php ."
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
         "squizlabs/php_codesniffer": "*",
