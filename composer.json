@@ -3,8 +3,12 @@
     "description": "A modern Laravel-like WordPress plugin framework that helps you build scalable, elegant plugins with clean structure and developer-friendly tools — powered by WP Frame Studio.",
     "authors": [
         {
-            "name": "mhrubel",
+            "name": "Mahamudul Hasan Rubel",
             "email": "bd.mhrubel@gmail.com"
+        },
+        {
+            "name": "RactStudio",
+            "email": "ractstudio@gmail.com"
         }
     ],
     "scripts": {
@@ -29,8 +33,8 @@
     },
     "require": {
         "php": ">=7.4",
-        "ractstudio/wp-frame-studio": "^1.0",
         "twig/twig": "^3.3",
-        "symfony/http-client": "^5.4"
+        "symfony/http-client": "^5.4",
+        "ractstudio/wp-frame-studio": "dev-main"
     }
 }
