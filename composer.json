@@ -1,0 +1,35 @@
+{
+    "name": "wp-plugin-frame/wp-plugin-frame",
+    "description": "A modern Laravel-like WordPress theme framework for developers who value clean structure, modular design, and next-gen workflows — built on WP Frame Studio.",
+    "authors": [
+        {
+            "name": "mhrubel",
+            "email": "bd.mhrubel@gmail.com"
+        }
+    ],
+    "scripts": {
+        "phpcs": "phpcs --standard=WordPress --extensions=php .",
+        "phpcbf": "phpcbf --standard=WordPress --extensions=php ."
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "wp-coding-standards/wpcs": "*",
+        "wp-cli/wp-cli": "^2.11"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        },
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "twig/twig": "^3.3",
+        "symfony/http-client": "^5.4"
+    }
+}
