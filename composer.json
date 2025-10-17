@@ -17,12 +17,6 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "require-dev": {
-        "squizlabs/php_codesniffer": "*",
-        "dealerdirect/phpcodesniffer-composer-installer": "*",
-        "wp-coding-standards/wpcs": "*",
-        "wp-cli/wp-cli": "^2.11"
-    },
     "config": {
         "platform": {
             "php": "7.4"
@@ -36,5 +30,11 @@
         "twig/twig": "^3.3",
         "symfony/http-client": "^5.4",
         "ractstudio/wp-frame-studio": "dev-main"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "wp-coding-standards/wpcs": "*",
+        "wp-cli/wp-cli": "^2.11"
     }
 }
