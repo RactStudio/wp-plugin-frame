@@ -15,7 +15,7 @@
         "phpcs": "phpcs --standard=WordPress --extensions=php .",
         "phpcbf": "phpcbf --standard=WordPress --extensions=php ."
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
         "platform": {
