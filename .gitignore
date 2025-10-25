@@ -5,6 +5,9 @@
 /vendor/
 composer.lock
 
+# Cloudflare Tunnel
+/tunnel/
+
 # Node
 /node_modules/
 npm-debug.log
