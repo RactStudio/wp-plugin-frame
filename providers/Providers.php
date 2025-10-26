@@ -2,16 +2,29 @@
 
 namespace PluginFrame;
 
+/**
+ * Central provider loader
+ */
 class Providers
 {
+    protected HooksProviders $hooksProviders;
+    protected FiltersProviders $filtersProviders;
+    protected ActionsProviders $actionsProviders;
+
     public function __construct()
     {
-        error_log('Providers Executed........');
-        // Load WP Hooks
-        new HooksProviders();
-        // Load WP Actions
-        new ActionsProviders();
-        // Load WP Filters
-        new FiltersProviders();
+        $this->hooksProviders = new HooksProviders();
+        $this->filtersProviders = new FiltersProviders();
+        $this->actionsProviders = new ActionsProviders();
+    }
+
+    /**
+     * Initialize all providers
+     */
+    public function init(string $mainFile): void
+    {
+        $this->hooksProviders->init($mainFile);
+        $this->filtersProviders->init();
+        $this->actionsProviders->init();
     }
 }

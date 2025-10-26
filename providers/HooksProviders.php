@@ -2,22 +2,27 @@
 
 namespace PluginFrame;
 
+use PluginFrame\Hooks\HooksInit;
+
+/**
+ * Load all plugin hooks via HooksInit
+ */
 class HooksProviders
 {
+    protected HooksInit $hooksInit;
+
     public function __construct()
     {
-        // Register activation/deactivation hooks
-        \register_activation_hook(PLUGIN_FRAME_FILE, [self::class, 'activate']);
-        \register_deactivation_hook(PLUGIN_FRAME_FILE, [self::class, 'deactivate']);
+        $this->hooksInit = new HooksInit();
     }
 
-    public static function activate()
+    /**
+     * Initialize all hooks
+     *
+     * @param string $mainFile Main plugin file path
+     */
+    public function init(string $mainFile): void
     {
-
-    }
-
-    public static function deactivate()
-    {
-        
+        $this->hooksInit->registerHooks($mainFile);
     }
 }

@@ -45,8 +45,18 @@ define( 'PLUGIN_FRAME_DIR', plugin_dir_path( PLUGIN_FRAME_FILE ) ); // Required
 define( 'PLUGIN_FRAME_URL', plugin_dir_url( PLUGIN_FRAME_FILE ) ); // Required
 define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Required
 
-// Load The Composer Autoloader
-require_once __DIR__ . '/vendor/autoload.php';
+// Load autoloader
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
 
-// Load The Plugin Frame Bootstrap File
-new \PluginFrame\Boot();
+    // Initialize plugin
+    if (class_exists('\\PluginFrame\Boot')) {
+        (new \PluginFrame\Boot)->instance();
+    }
+} else {
+    // Fallback or error handling
+    \add_action('admin_notices', function() {
+        echo '<div class="error"><p>Plugin dependencies not loaded. Please run composer install.</p></div>';
+    });
+    return;
+}
