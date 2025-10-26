@@ -2,25 +2,41 @@
 
 namespace PluginFrame;
 
-class Init {
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+class Init
+{
+    protected Providers $providers;
+    protected Routes $routes;
+
     public function __construct()
     {
-        error_log('Init executed........');
+        $this->providers = new Providers();
+        $this->routes = new Routes();
+    }
 
-        // Load providers
-        \add_action('plugins_loaded', [self::class, 'loadProviders']);
+    public function initialize()
+    {
+        // Load providers (plugins_loaded)
+        $this->initializeProviders();
         
         // Initialize routes
-        \add_action('init', [self::class, 'initializeRoutes']);
+
+        \add_action('init', function()
+        {
+            $this->initializeRoutes();
+        }, 5); // Early priority
     }
 
-    public static function loadProviders() {
-        // Execute the wp service providers from app/Providers
-        new \PluginFrame\Providers();
+    private function initializeProviders()
+    {
+        // Initialize the wp service providers from app/Providers
+        $this->providers->init(PLUGIN_FRAME_FILE);
     }
 
-    public static function initializeRoutes() {
-        // Initialize routes from routes/ directory
-        new \PluginFrame\Routes();
+    private function initializeRoutes() {
+        // Initialize the wp routes from routes/ directory
+        $this->routes->registerRoutes();
     }
 }

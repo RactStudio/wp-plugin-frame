@@ -2,12 +2,15 @@
 
 namespace PluginFrame;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 class Routes
 {
-    public function __construct()
+    public function registerRoutes()
     {
         
-        error_log('Routes Loaded........');
+        // error_log('7. Routes Loaded........');
         
     }
 }
